@@ -3,7 +3,15 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:import/warnings",
+    "prettier",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -12,6 +20,62 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
-  "rules": {}
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "react-hooks",
+    "simple-import-sort"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "jsx-a11y/aria-props": "error",
+    "jsx-a11y/heading-has-content": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "controlComponents": ["Input"]
+      }
+    ],
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/mouse-events-have-key-events": "error",
+    "jsx-a11y/role-has-required-aria-props": "error",
+    "jsx-a11y/role-supports-aria-props": "error",
+    "import/no-unresolved": ["off"],
+    "import/extensions": ["off"],
+    "linebreak-style": ["off"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-use-before-define": ["off"],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+
+    "object-curly-newline": ["off", { "minProperties": 2 }],
+    "object-shorthand": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "react/destructuring-assignment": [
+      "off",
+      { "extensions": [".ts", ".tsx"] }
+    ],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-key": "error",
+    "sort-imports": "off",
+    "import/order": "off",
+    "simple-import-sort/imports": "error",
+    "spaced-comment": ["error", "always", { "block": { "balanced": true } }],
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  }
 }
