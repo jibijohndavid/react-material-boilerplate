@@ -4,13 +4,13 @@
     "es2021": true
   },
   "extends": [
+    "airbnb",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/errors",
+    "plugin:react/recommended",
     "plugin:import/typescript",
     "plugin:import/warnings",
-    "prettier",
-    "plugin:react/recommended",
-    "airbnb"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -21,9 +21,9 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react",
     "@typescript-eslint",
     "import",
+    "react",
     "react-hooks",
     "simple-import-sort"
   ],
@@ -76,6 +76,7 @@
     "simple-import-sort/imports": "error",
     "spaced-comment": ["error", "always", { "block": { "balanced": true } }],
     "react/require-default-props": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "operator-linebreak": ["error", "after"]
   }
 }
