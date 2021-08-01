@@ -1,7 +1,7 @@
 import { Box, Button } from '@material-ui/core';
 import MainTitle from 'components/MainTitle';
-import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import React, { useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   LoginPageProps,
