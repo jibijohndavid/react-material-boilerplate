@@ -10,18 +10,21 @@
     "eslint": "eslint --ext js,ts,tsx",
     "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:tsc",
     "lint:eslint": "eslint \"src/*\"",
-    "lint:prettier": "prettier --check .",
+    "lint:prettier": "prettier --check \"src/*\"",
     "lint:tsc": "tsc --project .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix \"src/*\"",
-    "fix:prettier": "prettier --write ."
+    "fix:prettier": "prettier --write \"src/*\""
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "react-redux": "^7.2.4",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -29,6 +32,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.18",
+    "@types/redux-logger": "^3.0.9",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "eslint": "^7.31.0",
@@ -42,6 +47,7 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.1.1",
     "prettier": "2.3.2",
+    "redux-logger": "^3.0.6",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
