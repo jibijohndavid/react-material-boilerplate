@@ -9,12 +9,12 @@
     "eject": "react-scripts eject",
     "eslint": "eslint --ext js,ts,tsx",
     "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:tsc",
-    "lint:eslint": "eslint \"src/*\"",
-    "lint:prettier": "prettier --check \"src/*\"",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --project .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
-    "fix:eslint": "eslint --fix \"src/*\"",
-    "fix:prettier": "prettier --write \"src/*\""
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier --write ."
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
