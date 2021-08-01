@@ -6,6 +6,8 @@ type PublicRouteType = {
   restricted?: boolean;
   path?: string;
   exact?: boolean;
+  // TODO: Remove Any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component: any;
 };
 
