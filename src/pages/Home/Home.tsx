@@ -1,12 +1,13 @@
-import { Box, Button, Typography } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
+import MainTitle from 'components/MainTitle';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => (
   <Box component="header">
-    <Typography variant="h1">Material React Boilerplate</Typography>
+    <MainTitle title="Home Page" />
     <Button component={Link} to="/login" variant="outlined">
-      Login
+      Login Page
     </Button>
   </Box>
 );

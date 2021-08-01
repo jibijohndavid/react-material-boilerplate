@@ -1,4 +1,5 @@
-import { Box, Button, Typography } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
+import MainTitle from 'components/MainTitle';
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,12 @@ import {
 const Login = ({ loading, isLoggedIn }: LoginPageProps) => {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch({
+      type: USER_LOGIN_SUCCESS,
+    });
+  }, [dispatch]);
+
   const handleLogout = useCallback(() => {
     if (isLoggedIn) {
       dispatch({
@@ -22,20 +29,14 @@ const Login = ({ loading, isLoggedIn }: LoginPageProps) => {
       });
     }
   }, [dispatch, isLoggedIn]);
-
-  useEffect(() => {
-    dispatch({
-      type: USER_LOGIN_SUCCESS,
-    });
-  }, [dispatch]);
-
   return (
     <Box component="header">
-      <Typography variant="h1">Material React Boilerplate</Typography>
+      <MainTitle title="Login Page" />
+
       <Button component={Link} to="/" variant="outlined">
         Back to Home
       </Button>
-      <Button variant="outlined" onClick={handleLogout} disabled={loading}>
+      <Button onClick={handleLogout} disabled={loading}>
         {isLoggedIn ? 'Logout' : 'Login'}
       </Button>
     </Box>
