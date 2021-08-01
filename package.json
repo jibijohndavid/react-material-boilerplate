@@ -75,15 +75,15 @@
     ]
   },
   "lint-staged": {
-    "**/*": [
-      "eslint --fix",
-      "prettier --write",
+    "*": [
+      "eslint --fix .",
+      "prettier --write .",
       "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged"
+      "pre-commit": "lint-staged"
     }
   }
 }
