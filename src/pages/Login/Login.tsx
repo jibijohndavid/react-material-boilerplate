@@ -1,3 +1,4 @@
+import { Box, Button, Typography } from '@material-ui/core';
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -29,15 +30,15 @@ const Login = ({ loading, isLoggedIn }: LoginPageProps) => {
   }, [dispatch]);
 
   return (
-    <header>
-      <p>Material React Boilerplate - Login</p>
-      <button type="button" onClick={handleLogout} disabled={loading}>
+    <Box component="header">
+      <Typography variant="h1">Material React Boilerplate</Typography>
+      <Button component={Link} to="/" variant="outlined">
+        Back to Home
+      </Button>
+      <Button variant="outlined" onClick={handleLogout} disabled={loading}>
         {isLoggedIn ? 'Logout' : 'Login'}
-      </button>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
-    </header>
+      </Button>
+    </Box>
   );
 };
 
