@@ -1,15 +1,26 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { USER_LOGIN_SUCCESS, USER_LOGOUT_SUCCESS } from 'store/auth/types';
+import { Link } from 'react-router-dom';
+import {
+  LoginPageProps,
+  USER_LOGIN_SUCCESS,
+  USER_LOGOUT_SUCCESS,
+} from 'store/auth/types';
 
-const Login = () => {
+const Login = ({ loading, isLoggedIn }: LoginPageProps) => {
   const dispatch = useDispatch();
 
   const handleLogout = useCallback(() => {
-    dispatch({
-      type: USER_LOGOUT_SUCCESS,
-    });
-  }, [dispatch]);
+    if (isLoggedIn) {
+      dispatch({
+        type: USER_LOGOUT_SUCCESS,
+      });
+    } else {
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+      });
+    }
+  }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
     dispatch({
@@ -18,11 +29,15 @@ const Login = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <button type="button" onClick={handleLogout}>
-        Logout
+    <header>
+      <p>Material React Boilerplate - Login</p>
+      <button type="button" onClick={handleLogout} disabled={loading}>
+        {isLoggedIn ? 'Logout' : 'Login'}
       </button>
-    </div>
+      <div>
+        <Link to="/">Home</Link>
+      </div>
+    </header>
   );
 };
 

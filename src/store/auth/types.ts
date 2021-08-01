@@ -3,6 +3,11 @@ export type AuthStateType = {
   loginSuccess: boolean;
 };
 
+export type LoginPageProps = {
+  loading: boolean;
+  isLoggedIn: boolean;
+};
+
 // Type
 export const USER_LOGIN_INIT = 'USER:LOGIN::INIT';
 export const USER_LOGIN_SUCCESS = 'USER:LOGIN::SUCCESS';
