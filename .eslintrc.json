@@ -78,5 +78,6 @@
     "react/require-default-props": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "operator-linebreak": ["error", "after"]
-  }
+  },
+  "ignorePatterns": ["build/", "public/"]
 }
